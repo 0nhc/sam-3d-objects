@@ -1,3 +1,24 @@
+# SAM 3D On MSR Server
+This is my implementation of SAM 3D on MSR Server based on Flask.
+
+## Installation
+Follow the [setup](doc/setup.md) steps before running the following.
+
+## Quick Start
+```sh
+# Run these commands on the Lamb or Sheep server.
+cd sam-3d-objects
+micromamba activate sam3d-objects
+python flask_server.py
+# It will take some time to load the checkpoint.
+```
+
+```sh
+# Run these commands on your own laptop.
+python flask_client.py
+```
+
+
 # SAM 3D
 
 SAM 3D Objects is one part of SAM 3D, a pair of models for object and human mesh reconstruction.  If you’re looking for SAM 3D Body, [click here](https://github.com/facebookresearch/sam-3d-body).
