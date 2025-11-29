@@ -1,8 +1,8 @@
 # SAM 3D On MSR Server
-This is my implementation of SAM 3D on MSR Server based on Flask.
+This is my implementation of SAM 3D on the MSR Server based on Flask.
 
 ## Installation
-Follow the [setup](doc/setup.md) steps before running the following.
+Follow the [setup](doc/setup.md) steps to install SAM 3D on the MSR server.
 
 ## Quick Start
 ```sh
@@ -14,7 +14,7 @@ python flask_server.py
 ```
 
 ```sh
-# Run these commands on your own laptop.
+# Run this script on your own laptop.
 python flask_client.py
 ```
 
