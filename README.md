@@ -1,5 +1,18 @@
-# SAM 3D On MSR Server
-This is my implementation of SAM 3D on the MSR Server based on Flask.
+# SAM 3D on MSR Server
+This repository provides a simple Flask-based HTTP API wrapper around the original SAM-3D 3D reconstruction demo. Instead of running the notebook locally, you can deploy the model as a network service and call it from any machine.
+
+## What it does
+The server exposes a single endpoint:
+`POST /get_3d_mesh`
+
+Given:
+* an RGB (or RGBA) image of a scene, and
+* a corresponding object mask image,
+
+the server will:
+* Run the Inference model to reconstruct the object in 3D.
+* Export the result as a Gaussian Splat / 3D point-based representation and save it to a .ply file.
+* Return the generated .ply file directly in the HTTP response as a download.
 
 ## Installation
 Follow the [setup](doc/setup.md) steps to install SAM 3D on the MSR server.
