@@ -106,15 +106,20 @@ class SAM3DFlaskServer:
                 output = self.inference(image, mask, seed=seed)
 
                 # Export gaussian splat to .ply
-                ply_path = os.path.join(work_dir, "splat.ply")
-                output["gs"].save_ply(ply_path)
+                # ply_path = os.path.join(work_dir, "splat.ply")
+                # output["gs"].save_ply(ply_path)
+
+                # Export glb to .ply
+                glb_path = os.path.join(work_dir, "glb.ply")
+                mesh = output["glb"]
+                mesh.export(glb_path)
 
                 # Return the .ply file directly to the client
                 return send_file(
-                    ply_path,
+                    glb_path,
                     mimetype='application/octet-stream',
                     as_attachment=True,
-                    download_name='splat.ply'
+                    download_name='glb.ply'
                 )
 
             except Exception as e:
